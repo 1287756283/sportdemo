@@ -8,20 +8,20 @@
        	 username=#{username} and password=#{password} AND state = 1
     </select>
 
-<!--    <select id="getAllUser" resultType="com.lsl.bean.User">-->
-<!--        SELECT * FROM easyUser-->
-<!--        <if test="username !=null ">-->
-<!--            WHERE username like #{username}-->
-<!--        </if>-->
-<!--        LIMIT #{pageStart},#{pageSize}-->
-<!--    </select>-->
+    <select id="getAllUser" resultType="com.lsl.bean.User">
+        SELECT * FROM easyUser
+        <if test="username !=null ">
+            WHERE username like #{username}
+        </if>
+        LIMIT #{pageStart},#{pageSize}
+    </select>
 
-<!--    <select id="getUserCounts" resultType="com.lsl.bean.User">-->
-<!--        SELECT count(*) FROM `easyuser`-->
-<!--        <if test="username !=null ">-->
-<!--            WHERE username like #{username}-->
-<!--        </if>-->
-<!--    </select>-->
+    <select id="getUserCounts" resultType="java.lang.Integer">
+        SELECT count(*) FROM `easyuser`
+        <if test="username !=null ">
+            WHERE username like #{username}
+        </if>
+    </select>
 
 <!--    <select id="getUpdateUser" resultType="com.lsl.bean.User">-->
 <!--        SELECT * FROM easyuser WHERE id = #{id}-->
