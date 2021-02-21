@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lsl.dao.UserDao">
+    <select id="getUserByMassage" resultType="com.lsl.bean.User">
+       	select * from easyuser where
+       	 username=#{username} and password=#{password} AND state = 1
+    </select>
+
+<!--    <select id="getAllUser" resultType="com.lsl.bean.User">-->
+<!--        SELECT * FROM easyUser-->
+<!--        <if test="username !=null ">-->
+<!--            WHERE username like #{username}-->
+<!--        </if>-->
+<!--        LIMIT #{pageStart},#{pageSize}-->
+<!--    </select>-->
+
+<!--    <select id="getUserCounts" resultType="com.lsl.bean.User">-->
+<!--        SELECT count(*) FROM `easyuser`-->
+<!--        <if test="username !=null ">-->
+<!--            WHERE username like #{username}-->
+<!--        </if>-->
+<!--    </select>-->
+
+<!--    <select id="getUpdateUser" resultType="com.lsl.bean.User">-->
+<!--        SELECT * FROM easyuser WHERE id = #{id}-->
+<!--    </select>-->
+
+<!--    <update id="updateState">-->
+<!--        UPDATE easyuser SET state = #{state} WHERE id = #{id}-->
+<!--    </update>-->
+
+<!--    <insert id="addUser">-->
+<!--        INSERT INTO easyuser-->
+<!--        (username,password,email,role,state)-->
+<!--        VALUE-->
+<!--        (#{username},#{password},#{email},#{role},#{state})-->
+<!--    </insert>-->
+
+<!--    <update id="editUser">-->
+<!--        UPDATE easyuser SET username = #{username} , password = #{password} ,-->
+<!--        email = #{email} WHERE id = #{id}-->
+<!--    </update>-->
+
+<!--    <delete id="deleteUser">-->
+<!--        DELETE FROM easyuser WHERE id = #{id}-->
+<!--    </delete>-->
+
+</mapper>
