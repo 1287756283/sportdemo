@@ -23,28 +23,28 @@
         </if>
     </select>
 
-<!--    <select id="getUpdateUser" resultType="com.lsl.bean.User">-->
-<!--        SELECT * FROM easyuser WHERE id = #{id}-->
-<!--    </select>-->
+    <update id="uqdateState">
+        UPDATE easyuser SET state = #{state} WHERE id = #{id}
+    </update>
 
-<!--    <update id="updateState">-->
-<!--        UPDATE easyuser SET state = #{state} WHERE id = #{id}-->
-<!--    </update>-->
+    <insert id="addUser">
+        INSERT INTO easyuser
+        (username,password,email,role,state)
+        VALUE
+        (#{username},#{password},#{email},#{role},#{state})
+    </insert>
 
-<!--    <insert id="addUser">-->
-<!--        INSERT INTO easyuser-->
-<!--        (username,password,email,role,state)-->
-<!--        VALUE-->
-<!--        (#{username},#{password},#{email},#{role},#{state})-->
-<!--    </insert>-->
+    <select id="getUpdateUser" resultType="com.lsl.bean.User">
+            SELECT * FROM easyuser WHERE id = #{id}
+     </select>
 
-<!--    <update id="editUser">-->
-<!--        UPDATE easyuser SET username = #{username} , password = #{password} ,-->
-<!--        email = #{email} WHERE id = #{id}-->
-<!--    </update>-->
+    <update id="editUser">
+        UPDATE easyuser SET username = #{username} , password = #{password} ,
+        email = #{email} WHERE id = #{id}
+    </update>
 
-<!--    <delete id="deleteUser">-->
-<!--        DELETE FROM easyuser WHERE id = #{id}-->
-<!--    </delete>-->
+    <delete id="deleteUser">
+        DELETE FROM easyuser WHERE id = #{id}
+    </delete>
 
 </mapper>
